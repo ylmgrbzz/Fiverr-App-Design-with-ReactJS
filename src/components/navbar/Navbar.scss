@@ -9,6 +9,7 @@
   position: sticky;
   top: 0;
   cursor: pointer;
+  z-index: 999;
 
   &.active {
     background-color: white;
