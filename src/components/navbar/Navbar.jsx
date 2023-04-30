@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className="navbar">
+    <div className={active ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
           {/* <Link to="/"> */}
@@ -21,25 +23,27 @@ const Navbar = () => {
           <button> Join </button>
         </div>
       </div>
-      <hr />
-      <div className="menu">
-        {/* <Link className="link menuLink" to="/">
+      {active && (
+        <>
+          <hr />
+          <div className="menu">
+            {/* <Link className="link menuLink" to="/">
           Graphics & Design
         </Link>
         <Link className="link menuLink" to="/">
           Video & Animation
         </Link>
         <Link className="link menuLink" to="/">
-          Writing & Translation
+        Writing & Translation
         </Link>
         <Link className="link menuLink" to="/">
-          AI Services
+        AI Services
         </Link>
         <Link className="link menuLink" to="/">
-          Digital Marketing
+        Digital Marketing
         </Link>
         <Link className="link menuLink" to="/">
-          Music & Audio
+        Music & Audio
         </Link>
         <Link className="link menuLink" to="/">
           Programming & Tech
@@ -50,9 +54,11 @@ const Navbar = () => {
         <Link className="link menuLink" to="/">
           Lifestyle
         </Link> */}
-        <span>ylm</span>
-        <span>ylm2</span>
-      </div>
+            <span>ylm</span>
+            <span>ylm2</span>
+          </div>
+        </>
+      )}
     </div>
   );
 };
