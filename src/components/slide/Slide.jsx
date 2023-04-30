@@ -1,16 +1,16 @@
 import React from "react";
 import "./Slide.scss";
 import Slider from "infinite-react-carousel";
-import CatCard from "../catCard/CatCard";
-import { cards } from "../../data";
+// import CatCard from "../catCard/CatCard";
+// import { cards } from "../../data";
 
 const Slide = ({ children, slidesToShow, arrowsScroll }) => {
   return (
     <div className="slide">
       <div className="container">
-        {/* <Slider slidesToShow={slidesToShow} arrowsScroll={arrowsScroll}>
+        <Slider slidesToShow={slidesToShow} arrowsScroll={arrowsScroll}>
           {children}
-        </Slider> */}
+        </Slider>
         {/* <Slider dots>
           <div>
             <h3>1</h3>
@@ -28,11 +28,11 @@ const Slide = ({ children, slidesToShow, arrowsScroll }) => {
             <h3>5</h3>
           </div>
         </Slider> */}
-        <Slider slidesToShow={5} arrowsScroll={5}>
+        {/* <Slider slidesToShow={5} arrowsScroll={5}>
           {cards.map((card) => (
             <CatCard item={card} key={card.id} />
           ))}
-        </Slider>
+        </Slider> */}
       </div>
     </div>
   );
