@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", isActive);
+    return () => {
+      window.addEventListener("scroll", isActive);
+    };
+  }, []);
 
   return (
     <div className={active ? "navbar active" : "navbar"}>
