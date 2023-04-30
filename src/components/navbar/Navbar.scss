@@ -35,6 +35,7 @@
       font-family: "Montserrat", sans-serif;
 
       .user {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -44,6 +45,20 @@
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
+        }
+
+        .options {
+          position: absolute;
+          top: 40px;
+          right: 0px;
+          padding: 20px;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          color: gray;
+          width: 200px;
+          font-weight: 300;
         }
       }
       button {

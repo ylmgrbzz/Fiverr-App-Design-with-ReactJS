@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -40,23 +41,25 @@ const Navbar = () => {
           {!currentUser?.isSeller && <span>Become a Seller</span>}
           {!currentUser && <button> Join </button>}
           {currentUser && (
-            <div className="user">
+            <div className="user" onClick={() => setOpen(!open)}>
               <img
                 src="https://www.okutanhobi.com/hr28-y-harfi-biblo-ahsap-obje-624-53-B.jpg"
                 alt=""
               />
               <span>{currentUser?.username}</span>
-              <div className="options">
-                {currentUser?.isSeller && (
-                  <>
-                    <span>Gigs</span>
-                    <span>Add New Gig</span>
-                  </>
-                )}
-                <span>Orders</span>
-                <span>Messages</span>
-                <span>Gigs</span>
-              </div>
+              {open && (
+                <div className="options">
+                  {currentUser?.isSeller && (
+                    <>
+                      <span>Gigs</span>
+                      <span>Add New Gig</span>
+                    </>
+                  )}
+                  <span>Orders</span>
+                  <span>Messages</span>
+                  <span>Gigs</span>
+                </div>
+              )}
             </div>
           )}
         </div>
