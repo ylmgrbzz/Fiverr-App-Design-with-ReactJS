@@ -5,6 +5,9 @@
   flex-direction: column;
   background-color: #013914;
   color: white;
+  transition: 0.5s all ease;
+  position: sticky;
+  top: 0;
 
   &.active {
     background-color: white;
@@ -31,6 +34,18 @@
       font-weight: 500;
       font-family: "Montserrat", sans-serif;
 
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
       button {
         color: white;
         padding: 10px 20px;
