@@ -3,7 +3,7 @@ import "./Gigs.scss";
 import GigCard from "../../components/gigCard/GigCard";
 import { gigs } from "../../data";
 
-const Gigs = () => {
+function Gigs() {
   const [sort, setSort] = useState("sales");
   const [open, setOpen] = useState(false);
   const minRef = useRef();
@@ -15,31 +15,33 @@ const Gigs = () => {
   };
 
   const apply = () => {
-    console.log(minRef.current.value, maxRef.current.value);
+    console.log(minRef.current.value);
+    console.log(maxRef.current.value);
   };
 
   return (
     <div className="gigs">
-      <div className="contain">
-        <span className="breadcrumbs">Liverr, Graphics & Design</span>
-        <h1>AI ARTİSTS</h1>
+      <div className="container">
+        <span className="breadcrumbs">
+          Liverr {">"} Graphics & Design {">"}
+        </span>
+        <h1>AI Artists</h1>
         <p>
           Explore the boundaries of art and technology with Liverr's AI artists
         </p>
         <div className="menu">
           <div className="left">
             <span>Budget</span>
-            <input ref={minRef} type="number" placeholder="min"></input>
-            <input ref={maxRef} type="number" placeholder="max"></input>
+            <input ref={minRef} type="number" placeholder="min" />
+            <input ref={maxRef} type="number" placeholder="max" />
             <button onClick={apply}>Apply</button>
           </div>
           <div className="right">
-            <span className="sortBy"> Sort by</span>
+            <span className="sortBy">Sort by</span>
             <span className="sortType">
-              {" "}
-              {sort === "sales" ? "Best Selling" : "Newest Arrival"}{" "}
+              {sort === "sales" ? "Best Selling" : "Newest"}
             </span>
-            <img onClick={() => setOpen(!open)} src="./img/down.png" alt="" />
+            <img src="./img/down.png" alt="" onClick={() => setOpen(!open)} />
             {open && (
               <div className="rightMenu">
                 {sort === "sales" ? (
@@ -60,6 +62,6 @@ const Gigs = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Gigs;
